@@ -22,11 +22,9 @@
         "node-gyp": "node-gyp",
         "emcc-path": "emcc-path",
 
-        "is-monolithic": "test \"$(basename \"$(pwd)\")\" = javascript",
-        "copy-sources": "! npm -s -- run is-monolithic || (rsync -r --checksum --delete ../yoga/ sources/yoga/)",
 
-        "build:node": "npm -- run copy-sources && npm -- run node-gyp configure build",
-        "build:browser": "npm -- run copy-sources && npm -- run node-gyp configure build --asmjs=1",
+        "build:node": "npm -- run node-gyp configure build",
+        "build:browser": "npm -- run node-gyp configure build --asmjs=1",
         "postbuild:browser": "babel build/Release/nbind.js --out-file build/Release/nbind.js",
         "build:standalone": "webpack",
         "build:all": "npm -- run build:node && npm -- run build:browser && npm -- run build:standalone",
