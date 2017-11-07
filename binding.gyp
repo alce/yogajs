@@ -16,7 +16,8 @@
 	],
 
         "cflags": [
-            "-DNBIND"
+            "-DNBIND",
+            "-std=c99"
         ],
 
         "include_dirs": [

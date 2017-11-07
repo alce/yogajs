@@ -4,7 +4,7 @@
         [ "1==1", {
 
             "cflags_cc": [
-                "-std=c++14",
+                "-std=c++11",
                 "-DNBIND_DUPLICATE_POINTERS"
             ],
 
